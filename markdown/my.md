@@ -17,5 +17,5 @@ console.log(chalk.yellowBright(__filename))
 We can use imports here as well:
 
 ```js
-await import('./basics.mjs')
+await import(`${__dirname}/basics.mjs`)
 ```
