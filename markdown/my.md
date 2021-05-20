@@ -17,5 +17,5 @@ console.log(chalk.yellowBright(__filename))
 We can use imports here as well:
 
 ```js
-await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/markdown/basics.mjs')
+await import('./basics.mjs')
 ```
