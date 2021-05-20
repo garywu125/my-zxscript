@@ -24,5 +24,7 @@ await $`echo ${foo} | wc` // Vars properly quoted.
 
 // We can use import and require together.
 let path = await import('path')
-let {name} = require(path.join(__dirname, '..', 'package.json'))
+// ?? ca
+// let {name} = require(path.join(__dirname, '..', 'package.json'))
+let name="obsolete"
 console.log(chalk.black.bgCyanBright(name))
