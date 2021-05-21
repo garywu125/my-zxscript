@@ -17,8 +17,20 @@ The `__filename` will be pointed to **index.md**:
 console.log(chalk.yellowBright(__filename))
 ```
 
-We can use imports here as well:
+We can use import ES Module here as well:
 
 ```js
+// load another mjs && execute
 await import(`${__dirname}/basics.mjs`)
+```
+We can use import and require together:
+  use import ESM  module via import('module-name') , the module file extension name must be .mjs
+We can use import node.js  module via require('module-name')
+
+```js
+// We can use import and require together:
+let {hello} = await import(`${__dirname}/say.mjs`);
+console.log(hello("John"))
+console.log(hello("Sarah"))
+require('find-me')
 ```
