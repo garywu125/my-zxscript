@@ -1,3 +1,12 @@
+#!/usr/bin/env dx
+/**
+ *  run remote script:
+ * 		$zx https://raw.githubusercontent.com/garywu125/my-zxscript/main/advance/remote-script/example-script.mjs
+ * 
+ * 
+ */
+
+
 console.log(chalk.black.bgYellow(' This is an example of remote script '))
 
 let name = await question('What is you name? ')
