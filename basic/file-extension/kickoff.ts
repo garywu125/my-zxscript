@@ -30,8 +30,8 @@ const eddy = new User("Eddy")
 // eddy.name // Error: 'name' is private
 eddy.greet()
 
-let name="obsolete"
-console.log(chalk.black.bgCyanBright(name))
+// let name="obsolete"
+// console.log(chalk.black.bgCyanBright(name))
 
 await $`whoami`
 await $`ls -la ${__dirname}`
@@ -53,8 +53,16 @@ void async function () {
 
   // import local module (include remote)
   let { hello } = await import(`${__dirname}/esm.mjs`);
-  console.log(hello("John"));
-  console.log(hello("Sarah"));  
+  // console.log(hello("John"));
+  // console.log(hello("Sarah"));  
+
+  await  $`printf ${hello("john")}`
+  await  $`printf ${hello("sarsh")}`
+
+  // let path = await import('path') // We can use import,
+  // console.log(path)
+  // let {name} = require(path.join(__dirname, '..', '../basic/package.json')) // and require
+  // console.log(name)
 
   // import/excute remote script
   

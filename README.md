@@ -16,3 +16,4 @@ $ zx https://raw.githubusercontent.com/garywu125/my-zxscript/main/markdown/main.
 ### ???? md file extension does not allow typescript
 
 
+??? import module function ??? module made with js/ts
