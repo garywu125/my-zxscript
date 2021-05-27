@@ -41,25 +41,28 @@ await $`ls -lt |  head -n 2 | tail +2  | awk '{ print $NF }' `
 let target=await $`ls -lt |  sed -n '2p' | awk '{ print $NF }' `
 await $`echo ${target}`
 
-// require commonjs module with .js file extension
+  // mix ts  with commonjs module / ESM module
+  // require .js file extension
+  // import .mjs file extension
+
 require(`${__dirname}/cjs.js`);
 
 // await import ESM module  with .mjs file extension , sayHi reexported from another .mjs
-const { area, circumference,sayHi } = await import(`${__dirname}/circle.mjs`);  
+
+const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
+
 
 const r = 3;
 
-console.log(sayHi('LogRocket'))
+console.log(myHi('LogRocket'))
 
 console.log(`Circle with radius ${r} has
-  area: ${area(r)};
+  area: ${myArea(r)};
   circunference: ${circumference(r)}`);
 
 console.log("finally")
 
-//   // mix ts  with commonjs module / ESM module
-//   // require .js file extension
-//   // import .mjs file extension
+
   
   
 //   require(`${__dirname}/cjs.js`);
