@@ -19,7 +19,9 @@ try {
   let { hello } = await import(`${__dirname}/esm.mjs`);
   console.log(hello("John"));
   console.log(hello("Sarah"));  
-  
+  // ??? you can not import ts module ???
+  // import(`${__dirname}/myts.ts`);
+
 } catch (p) {
   console.log(`Exit code: ${p.exitCode}`);
   console.log(`${chalk.green("Error:")}  ${chalk.red(p.stderr)}`);
