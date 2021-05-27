@@ -1,10 +1,11 @@
+#!/usr/bin/env zx
 
 // await import ESM module  with .mjs file extension
 // sayHi reexported from another .mjs
 //  $ npm install --save esm to install the module
 
 // *** nested import
-export const { sayHi} = await import(`${__dirname}/hi.mjs`);
+export const { sayHi} = await import(`./hi.mjs`);
 
 const PI = 3.14159265359;
 
