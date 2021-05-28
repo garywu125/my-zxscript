@@ -49,10 +49,10 @@ require(`${__dirname}/cjs.js`);
 
 // await import ESM module  with .mjs file extension , sayHi reexported from another .mjs
 
-// const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
+const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
 
-//???? await remote import mjs ???
-const { area:myArea, circumference,sayHi:myHi } = await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/ts-project/src/circle.mjs')
+//???? await remote import mjs ?????
+// const { area:myArea, circumference,sayHi:myHi } = await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/ts-project/src/circle.mjs')
 
 
 const r = 3;
