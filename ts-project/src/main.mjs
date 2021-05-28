@@ -45,10 +45,20 @@ await $`echo ${target}`
   // require .js file extension
   // import .mjs file extension
 
-require(`${__dirname}/cjs.js`);
+// require(`${__dirname}/cjs.js`);
 
 // explicite import 
-const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle2.mjs`);  
+// const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle2.mjs`);  
+// const r = 3;
+
+// console.log(myHi('LogRocket'))
+
+// console.log(`Circle with radius ${r} has
+//   area: ${myArea(r)};
+//   circunference: ${circumference(r)}`);
+
+// console.log("finally")
+
 // import via import function
 // const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
 
@@ -56,34 +66,9 @@ const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/cir
 // const { area:myArea, circumference,sayHi:myHi } = await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/ts-project/src/circle.mjs')
 
 
-const r = 3;
-
-console.log(myHi('LogRocket'))
-
-console.log(`Circle with radius ${r} has
-  area: ${myArea(r)};
-  circunference: ${circumference(r)}`);
-
-console.log("finally")
 
 
   
   
-//   require(`${__dirname}/cjs.js`);
 
-//   // import local module (include remote)
-//   let { hello } = await import(`${__dirname}/esm.mjs`);
-//   // console.log(hello("John"));
-//   // console.log(hello("Sarah"));  
-
-//   await  $`printf ${hello("john")}`
-//   await  $`printf ${hello("sarsh")}`
-
-//   // let path = await import('path') // We can use import,
-//   // console.log(path)
-//   // let {name} = require(path.join(__dirname, '..', '../basic/package.json')) // and require
-//   // console.log(name)
-
-//   // import/excute remote script
-  
  
