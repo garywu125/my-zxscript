@@ -14,21 +14,21 @@ import 'zx'
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-class User {
-  private name : string
+// class User {
+//   private name : string
 
-  constructor(name : string) {
-    this.name = name
-  }
+//   constructor(name : string) {
+//     this.name = name
+//   }
 
-  greet() {
-    console.log(` ${chalk.bold.underline.blue("Hello:")}, ${chalk.green(this.name)}!`)
-  }
-}
+//   greet() {
+//     console.log(` ${chalk.bold.underline.blue("Hello:")}, ${chalk.green(this.name)}!`)
+//   }
+// }
 
-const eddy = new User("Eddy")
-// eddy.name // Error: 'name' is private
-eddy.greet()
+// const eddy = new User("Eddy")
+// // eddy.name // Error: 'name' is private
+// eddy.greet()
 
 // using zx built-in package
 let name="obsolete"
