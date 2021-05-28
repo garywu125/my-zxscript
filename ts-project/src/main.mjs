@@ -1,5 +1,5 @@
 #!/usr/bin/env zx
-import 'zx'
+// import 'zx'
 // Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
@@ -45,20 +45,10 @@ await $`echo ${target}`
   // require .js file extension
   // import .mjs file extension
 
-// require(`${__dirname}/cjs.js`);
+require(`${__dirname}/cjs.js`);
 
 // explicite import 
-// const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle2.mjs`);  
-// const r = 3;
-
-// console.log(myHi('LogRocket'))
-
-// console.log(`Circle with radius ${r} has
-//   area: ${myArea(r)};
-//   circunference: ${circumference(r)}`);
-
-// console.log("finally")
-
+const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle2.mjs`);  
 // import via import function
 // const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
 
@@ -66,6 +56,15 @@ await $`echo ${target}`
 // const { area:myArea, circumference,sayHi:myHi } = await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/ts-project/src/circle.mjs')
 
 
+const r = 3;
+
+console.log(myHi('LogRocket'))
+
+console.log(`Circle with radius ${r} has
+  area: ${myArea(r)};
+  circunference: ${circumference(r)}`);
+
+console.log("finally")
 
 
   
