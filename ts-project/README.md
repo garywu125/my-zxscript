@@ -1,5 +1,5 @@
 
-# Mix ESM module with Common js Module:
+# Mix ESM module with Common js Module
 ESM module 為主(mjs) , require module 為輔 , ESM & CJS can work together and inter-operation 
 - shebang: #!/usr/bin/env <node> 
 - file name .mjs
@@ -18,3 +18,9 @@ Node >= v13# , 選擇下面兩種其一：
 - 加入 { "type": "module" } 在 package.json 檔案中
 
 https://eddychang.me/node-es6-module
+
+
+# Warning:
+ * ESM modules constains in zx: Only file and data URLs are supported by the default ESM loader.  https:// protocol will not be accepted
+ * Remote script constrains in zx : remote script can't not use third party cjs module , beacuse it need <npm tool> to install
+   ?? push node_modules to github ??
