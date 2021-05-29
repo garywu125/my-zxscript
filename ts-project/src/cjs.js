@@ -2,7 +2,34 @@
 
 
 // The zx provides require() function, so it can be used with imports in .mjs files (when using zx executable).
+// declare required dependency
 
+// load common.js module dependency. third-party module come from npm (nanoid)/ node.js built-in modules
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
+const { nanoid } = require("nanoid");
+
+
+let tmpDir;
+const appPrefix = 'my-app';
+try {
+  tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), appPrefix));
+  // the rest of your app goes here
+}
+catch {
+  // handle error
+}
+finally {
+  try {
+    if (tmpDir) {
+      fs.rmSync(tmpDir, { recursive: true });
+    }
+  }
+  catch (e) {
+    console.error(`An error has occurred while removing the temp folder at ${tmpDir}. Please remove it manually. Error: ${e}`);
+  }
+}
 
 
 void async function () {
@@ -32,8 +59,6 @@ console.log(result3)
 }
 
 // require common,js packages    , *** nested required ***
-
-const { nanoid } = require("nanoid");
 
   // It will generate and return an ID with 21 characters
  const id = nanoid();    

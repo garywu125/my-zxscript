@@ -47,9 +47,12 @@ await $`echo ${target}`
 
 require(`${__dirname}/cjs.js`);
 
-// explicite import 
-const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle2.mjs`);  
-// import via import function
+// import ESM module via import function : dynamic import ESM module * destructuring assignment : 
+const { area:myArea, circumference,sayHi:myHi,snakeCase } = await import(`${__dirname}/circle2.mjs`);  
+
+['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
+  console.log(snakeCase(text));
+});
 // const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
 
 //???? await remote import mjs ?????

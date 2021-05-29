@@ -1,10 +1,23 @@
 #!/usr/bin/env node
+/**
+ *   notes :
+ *        -  explicite ESM Module import , shebang : <node>
+ * 
+ *   zx: Only file and data URLs are supported by the default ESM loader.
+ *       https:// protocol will not be accepted 
+ * 
+ *  data url :
+ *           Data URI 是一種檔案格式，其資料全部都是經過 base64 編碼之後，以文字的方式來儲存的，
+ *           這樣以文字方式儲存的好處就是可以直接寫進(embedded) HTML 或 CSS 中，不需要透過外部的檔案儲存,reduce http request
+ * 
+ */
 
-//  explicite import  !!! 
-//  shebang : <node>
-
+// Declare ESM modules dependencies ,
 import {$} from 'zx'
- export {sayHi} from "./hi.mjs"
+export {sayHi} from "./hi.mjs"
+
+// mjs alllow require function to load esm module
+export const {snakeCase} = require('lodash');
 
 
 const PI = 3.14159265359;
@@ -16,3 +29,4 @@ export function area(radius) {
 export function circumference(radius) {
   return 2 * radius * PI;
 }
+
