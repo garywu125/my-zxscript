@@ -13,3 +13,9 @@ if (answer == 'n') {
 console.log(chalk`$ {green.bold rm} -rf ${os.homedir()}`)
 
 console.log(chalk`{black.bgGreen  OK }`)
+
+const {snakeCase} = require('lodash');
+
+['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
+    console.log(snakeCase(text));
+  });
