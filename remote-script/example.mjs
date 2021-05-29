@@ -16,6 +16,15 @@ console.log(chalk`{black.bgGreen  OK }`)
 
 const {snakeCase} = require('lodash');
 
+// nodejs buit-in module
+
+var querystring = require('querystring');
+var q = querystring.parse('year=2017&month=february');
+console.log(q.year);
+
+
+// third party nodejs module
 ['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
     console.log(snakeCase(text));
   });
+

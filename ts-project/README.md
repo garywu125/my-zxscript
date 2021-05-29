@@ -23,4 +23,5 @@ https://eddychang.me/node-es6-module
 # Warning:
  * ESM modules constains in zx: Only file and data URLs are supported by the default ESM loader.  https:// protocol will not be accepted
  * Remote script constrains in zx : remote script can't not use third party cjs module , beacuse it need <npm tool> to install
-   ?? push node_modules to github ??
+   - third party node_modules hosted in github won't be execute
+   - nodejs built in module
