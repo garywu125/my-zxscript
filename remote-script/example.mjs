@@ -14,9 +14,17 @@ console.log(chalk`$ {green.bold rm} -rf ${os.homedir()}`)
 
 console.log(chalk`{black.bgGreen  OK }`)
 
-// local ESM module
 
-const { area:myArea, circumference,sayHi:myHi } = await import(`./circle.mjs`);  
+
+// remote ESM module : import remote ESM module will have path problem,Only file and data URLs are supported by the default ESM loader
+
+
+// const { area:myArea, circumference,sayHi:myHi } = await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/remote-script/circle.mjs')
+
+
+// local ESM module : remote script excution will have path problem to load module
+
+ const { area:myArea, circumference,sayHi:myHi } = await import(`./circle.mjs`);  
 
 const r = 3;
 
@@ -30,18 +38,18 @@ console.log("finally")
 
 
 
-// using full path to load third party cjs module
-// const {snakeCase} = require('lodash');
+// built in node module will be ok 
 
-// nodejs buit-in module ok
-
-// var querystring = require('querystring');
-// var q = querystring.parse('year=2017&month=february');
-// console.log(q.year);
+var querystring = require('querystring');
+var q = querystring.parse('year=2017&month=february');
+console.log(q.year);
 
 
-// third party nodejs module , remote script excution will have path problem
-// ['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
-//     console.log(snakeCase(text));
-//   });
+// local cjs module : remote script excution will have path problem to load module
+
+const {snakeCase} = require('lodash');
+
+['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
+    console.log(snakeCase(text));
+  });
 
