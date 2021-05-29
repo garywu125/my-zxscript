@@ -13,18 +13,35 @@ if (answer == 'n') {
 console.log(chalk`$ {green.bold rm} -rf ${os.homedir()}`)
 
 console.log(chalk`{black.bgGreen  OK }`)
+
+// local ESM module
+
+const { area:myArea, circumference,sayHi:myHi } = await import(`./circle.mjs`);  
+
+const r = 3;
+
+console.log(myHi('LogRocket'))
+
+console.log(`Circle with radius ${r} has
+  area: ${myArea(r)};
+  circunference: ${circumference(r)}`);
+
+console.log("finally")
+
+
+
 // using full path to load third party cjs module
-const {snakeCase} = require(`${__dirname}/node_modules/lodash`);
+// const {snakeCase} = require('lodash');
 
-// nodejs buit-in module
+// nodejs buit-in module ok
 
-var querystring = require('querystring');
-var q = querystring.parse('year=2017&month=february');
-console.log(q.year);
+// var querystring = require('querystring');
+// var q = querystring.parse('year=2017&month=february');
+// console.log(q.year);
 
 
-// third party nodejs module
-['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
-    console.log(snakeCase(text));
-  });
+// third party nodejs module , remote script excution will have path problem
+// ['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
+//     console.log(snakeCase(text));
+//   });
 
