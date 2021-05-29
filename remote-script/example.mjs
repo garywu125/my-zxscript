@@ -13,8 +13,8 @@ if (answer == 'n') {
 console.log(chalk`$ {green.bold rm} -rf ${os.homedir()}`)
 
 console.log(chalk`{black.bgGreen  OK }`)
-
-const {snakeCase} = require('lodash');
+// using full path to load third party cjs module
+const {snakeCase} = require(`${__dirname}/node_modules/lodash`);
 
 // nodejs buit-in module
 
