@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env zx
 /**
  *   notes :
  *        -  explicite ESM Module import , shebang : <node>
@@ -13,12 +13,17 @@
  */
 
 // Declare ESM modules dependencies ,
-import {$} from 'zx'
+// import {$} from 'zx'
+
+// .mjs allow declare import
+//  import {sayHi} from "./hi.mjs"
+//  export {sayHi}
+
 export {sayHi} from "./hi.mjs"
 
 // mjs alllow require function to load esm module
 export const {snakeCase} = require('lodash');
-
+export {hello} from "./say.mjs"
 
 const PI = 3.14159265359;
 
@@ -29,4 +34,6 @@ export function area(radius) {
 export function circumference(radius) {
   return 2 * radius * PI;
 }
+
+
 

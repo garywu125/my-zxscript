@@ -1,18 +1,18 @@
 #!/usr/bin/env zx
+// !!!! import this is required
 import 'zx'
-// Copyright 2021 Google LLC
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     https://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
+
+// !!!! TS can't allow declare  import , using import(expression)
+// import { area, circumference,sayHi,snakeCase } from "./circle2.mjs";  
+
+await import(`${__dirname}/circle3.mjs`);
+
+const { area:myArea, circumference,sayHi:myHi,snakeCase,hello } = await import(`${__dirname}/circle2.mjs`);  
+
+['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
+  console.log(snakeCase(text));
+});
+console.log(hello("taiwan"))
 
 class User {
   private name : string
@@ -48,12 +48,11 @@ await $`echo ${target}`
 require(`${__dirname}/cjs.js`);
 
 // import ESM module via import function : dynamic import ESM module * destructuring assignment : 
-const { area:myArea, circumference,sayHi:myHi,snakeCase } = await import(`${__dirname}/circle2.mjs`);  
 
-['HelloWorld', 'left pad', 'ECMAScript'].forEach(text => {
-  console.log(snakeCase(text));
-});
+
+
 // const { area:myArea, circumference,sayHi:myHi } = await import(`${__dirname}/circle.mjs`);  
+
 
 //???? await remote import mjs ?????
 // const { area:myArea, circumference,sayHi:myHi } = await import('https://raw.githubusercontent.com/garywu125/my-zxscript/main/ts-project/src/circle.mjs')
